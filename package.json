@@ -1,0 +1,45 @@
+{
+	"name": "map-extras",
+	"version": "0.0.0-development",
+	"description": "Utility functions for JavaScript Map — mapValues, filterEntries, merge, invert, and groupBy",
+	"license": "MIT",
+	"repository": "mstuart/map-extras",
+	"funding": "https://github.com/sponsors/mstuart",
+	"author": {
+		"name": "Mark Stuart",
+		"email": "mstuart@users.noreply.github.com",
+		"url": "https://github.com/mstuart"
+	},
+	"type": "module",
+	"exports": {
+		"types": "./index.d.ts",
+		"default": "./index.js"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=20"
+	},
+	"scripts": {
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"keywords": [
+		"map",
+		"utilities",
+		"mapvalues",
+		"filter",
+		"merge",
+		"invert",
+		"groupby",
+		"entries",
+		"transform"
+	],
+	"devDependencies": {
+		"ava": "^6.0.0",
+		"tsd": "^0.31.0",
+		"xo": "^0.60.0"
+	}
+}
