@@ -1,6 +1,6 @@
 {
 	"name": "map-extras",
-	"version": "0.0.0-development",
+	"version": "1.0.0",
 	"description": "Utility functions for JavaScript Map — mapValues, filterEntries, merge, invert, and groupBy",
 	"license": "MIT",
 	"repository": "mstuart/map-extras",
