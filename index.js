@@ -7,10 +7,10 @@ export function mapValues(map, function_) {
 	return result;
 }
 
-export function filterEntries(map, function_) {
+export function filterEntries(map, shouldKeep) {
 	const result = new Map();
 	for (const [key, value] of map) {
-		if (function_(value, key)) {
+		if (shouldKeep(value, key)) {
 			result.set(key, value);
 		}
 	}

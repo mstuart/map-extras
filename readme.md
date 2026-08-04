@@ -37,9 +37,9 @@ groupBy([1, 2, 3, 4], x => x % 2 === 0 ? 'even' : 'odd');
 
 Returns a new Map with values transformed by `function_(value, key)`.
 
-### filterEntries(map, function_)
+### filterEntries(map, shouldKeep)
 
-Returns a new Map with entries where `function_(value, key)` is truthy.
+Returns a new Map with entries where `shouldKeep(value, key)` is truthy.
 
 ### mergeMap(...maps)
 
