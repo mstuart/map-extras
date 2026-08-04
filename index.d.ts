@@ -20,7 +20,7 @@ export function mapValues<K, V, U>(map: Map<K, V>, function_: (value: V, key: K)
 Create a new Map with entries filtered by a predicate.
 
 @param map - The input Map.
-@param function_ - The predicate function receiving `(value, key)`.
+@param shouldKeep - The predicate function receiving `(value, key)`.
 @returns A new Map with entries that pass the predicate.
 
 @example
@@ -32,7 +32,7 @@ filterEntries(map, value => value > 1);
 //=> Map { 'b' => 2, 'c' => 3 }
 ```
 */
-export function filterEntries<K, V>(map: Map<K, V>, function_: (value: V, key: K) => boolean): Map<K, V>;
+export function filterEntries<K, V>(map: Map<K, V>, shouldKeep: (value: V, key: K) => boolean): Map<K, V>;
 
 /**
 Merge multiple Maps into a new Map. Later Maps override earlier ones.
