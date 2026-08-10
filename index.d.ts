@@ -14,7 +14,10 @@ mapValues(map, value => value * 2);
 //=> Map { 'a' => 2, 'b' => 4 }
 ```
 */
-export function mapValues<K, V, U>(map: Map<K, V>, function_: (value: V, key: K) => U): Map<K, U>;
+export function mapValues<K, V, U>(
+  map: Map<K, V>,
+  function_: (value: V, key: K) => U
+): Map<K, U>;
 
 /**
 Create a new Map with entries filtered by a predicate.
@@ -32,7 +35,10 @@ filterEntries(map, value => value > 1);
 //=> Map { 'b' => 2, 'c' => 3 }
 ```
 */
-export function filterEntries<K, V>(map: Map<K, V>, shouldKeep: (value: V, key: K) => boolean): Map<K, V>;
+export function filterEntries<K, V>(
+  map: Map<K, V>,
+  shouldKeep: (value: V, key: K) => boolean
+): Map<K, V>;
 
 /**
 Merge multiple Maps into a new Map. Later Maps override earlier ones.
@@ -50,7 +56,7 @@ mergeMap(a, b);
 //=> Map { 'x' => 1, 'y' => 2 }
 ```
 */
-export function mergeMap<K, V>(...maps: Array<Map<K, V>>): Map<K, V>;
+export function mergeMap<K, V>(...maps: Map<K, V>[]): Map<K, V>;
 
 /**
 Create a new Map with keys and values swapped.
@@ -84,4 +90,7 @@ groupBy([1, 2, 3, 4], x => x % 2 === 0 ? 'even' : 'odd');
 //=> Map { 'odd' => [1, 3], 'even' => [2, 4] }
 ```
 */
-export function groupBy<T, K>(iterable: Iterable<T>, function_: (item: T) => K): Map<K, T[]>;
+export function groupBy<T, K>(
+  iterable: Iterable<T>,
+  function_: (item: T) => K
+): Map<K, T[]>;
