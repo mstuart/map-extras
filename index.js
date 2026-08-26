@@ -42,11 +42,16 @@ export function groupBy(iterable, function_) {
   const result = new Map();
   for (const item of iterable) {
     const key = function_(item);
-    if (!result.has(key)) {
-      result.set(key, []);
+    // Single lookup instead of has() + get() (+ set()): fetch the group once
+    // and create it on the miss. Groups are always arrays, so `undefined`
+    // unambiguously means "not yet present".
+    let group = result.get(key);
+    if (group === undefined) {
+      group = [];
+      result.set(key, group);
     }
 
-    result.get(key).push(item);
+    group.push(item);
   }
 
   return result;
