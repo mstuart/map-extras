@@ -7,6 +7,9 @@ import {
   mergeMap,
 } from "./index.js";
 
+declare const readonlyMap: ReadonlyMap<string, number>;
+expectType<Map<string, number>>(mapValues(readonlyMap, (value) => value));
+
 const numberMap = new Map([
   ["a", 1],
   ["b", 2],

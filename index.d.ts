@@ -15,7 +15,7 @@ mapValues(map, value => value * 2);
 ```
 */
 export function mapValues<K, V, U>(
-  map: Map<K, V>,
+  map: ReadonlyMap<K, V>,
   function_: (value: V, key: K) => U
 ): Map<K, U>;
 
@@ -36,7 +36,7 @@ filterEntries(map, value => value > 1);
 ```
 */
 export function filterEntries<K, V>(
-  map: Map<K, V>,
+  map: ReadonlyMap<K, V>,
   shouldKeep: (value: V, key: K) => boolean
 ): Map<K, V>;
 
@@ -56,7 +56,7 @@ mergeMap(a, b);
 //=> Map { 'x' => 1, 'y' => 2 }
 ```
 */
-export function mergeMap<K, V>(...maps: Map<K, V>[]): Map<K, V>;
+export function mergeMap<K, V>(...maps: ReadonlyMap<K, V>[]): Map<K, V>;
 
 /**
 Create a new Map with keys and values swapped.
@@ -73,7 +73,7 @@ invertMap(map);
 //=> Map { 1 => 'a', 2 => 'b' }
 ```
 */
-export function invertMap<K, V>(map: Map<K, V>): Map<V, K>;
+export function invertMap<K, V>(map: ReadonlyMap<K, V>): Map<V, K>;
 
 /**
 Group items from an iterable by a key function.
