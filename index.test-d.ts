@@ -25,3 +25,7 @@ expectType<Map<string, number[]>>(groupBy([1, 2, 3], groupFunction));
 
 expectError(mapValues("not a map", (x) => x));
 expectError(filterEntries("not a map", (x) => x));
+
+expectType<Map<string | number, string | number>>(
+  mergeMap(new Map([["a", 1]]), new Map([[2, "b"]]))
+);
