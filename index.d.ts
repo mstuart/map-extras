@@ -57,6 +57,12 @@ mergeMap(a, b);
 ```
 */
 export function mergeMap<K, V>(...maps: ReadonlyMap<K, V>[]): Map<K, V>;
+export function mergeMap<Maps extends readonly ReadonlyMap<unknown, unknown>[]>(
+  ...maps: Maps
+): Map<
+  Maps[number] extends ReadonlyMap<infer K, unknown> ? K : never,
+  Maps[number] extends ReadonlyMap<unknown, infer V> ? V : never
+>;
 
 /**
 Create a new Map with keys and values swapped.
